@@ -14,227 +14,313 @@ Docker è ampiamente utilizzato per lo sviluppo di applicazioni, il testing, e l
 
 ## Guida ai Comandi Principali di Docker
 
-1. docker run
-Descrizione: Esegue un comando in un nuovo container.
+---
 
-Sintassi:
+# Guida ai Comandi Principali di Docker
 
-bash
-Copia codice
+
+## 1. `docker run`
+
+**Descrizione:** Esegue un comando in un nuovo container.
+
+**Sintassi:**
+
+```bash
 docker run [opzioni] immagine [comando] [argomenti]
-Esempio:
+```
 
-bash
-Copia codice
+**Esempio:**
+
+```bash
 docker run hello-world
-2. docker pull
-Descrizione: Scarica un'immagine da un repository Docker.
+```
 
-Sintassi:
+---
 
-bash
-Copia codice
+## 2. `docker pull`
+
+**Descrizione:** Scarica un'immagine da un repository Docker.
+
+**Sintassi:**
+
+```bash
 docker pull [opzioni] nome_immagine[:tag]
-Esempio:
+```
 
-bash
-Copia codice
+**Esempio:**
+
+```bash
 docker pull ubuntu:latest
-3. docker images
-Descrizione: Elenca le immagini Docker presenti sul sistema.
+```
 
-Sintassi:
+---
 
-bash
-Copia codice
+## 3. `docker images`
+
+**Descrizione:** Elenca le immagini Docker presenti sul sistema.
+
+**Sintassi:**
+
+```bash
 docker images [opzioni]
-Esempio:
+```
 
-bash
-Copia codice
+**Esempio:**
+
+```bash
 docker images
-4. docker ps
-Descrizione: Elenca i container in esecuzione.
+```
 
-Sintassi:
+---
 
-bash
-Copia codice
+## 4. `docker ps`
+
+**Descrizione:** Elenca i container in esecuzione.
+
+**Sintassi:**
+
+```bash
 docker ps [opzioni]
-Esempio:
+```
 
-bash
-Copia codice
+**Esempio:**
+
+```bash
 docker ps -a
-L'opzione -a mostra tutti i container, inclusi quelli non in esecuzione.
+```
 
-5. docker stop
-Descrizione: Ferma uno o più container in esecuzione.
+_L'opzione `-a` mostra tutti i container, inclusi quelli non in esecuzione._
 
-Sintassi:
+---
 
-bash
-Copia codice
+## 5. `docker stop`
+
+**Descrizione:** Ferma uno o più container in esecuzione.
+
+**Sintassi:**
+
+```bash
 docker stop [opzioni] NOME_CONTAINER/ID_CONTAINER
-Esempio:
+```
 
-bash
-Copia codice
+**Esempio:**
+
+```bash
 docker stop mio_container
-6. docker start
-Descrizione: Avvia uno o più container fermati.
+```
 
-Sintassi:
+---
 
-bash
-Copia codice
+## 6. `docker start`
+
+**Descrizione:** Avvia uno o più container fermati.
+
+**Sintassi:**
+
+```bash
 docker start [opzioni] NOME_CONTAINER/ID_CONTAINER
-Esempio:
+```
 
-bash
-Copia codice
+**Esempio:**
+
+```bash
 docker start mio_container
-7. docker rm
-Descrizione: Rimuove uno o più container.
+```
 
-Sintassi:
+---
 
-bash
-Copia codice
+## 7. `docker rm`
+
+**Descrizione:** Rimuove uno o più container.
+
+**Sintassi:**
+
+```bash
 docker rm [opzioni] NOME_CONTAINER/ID_CONTAINER
-Esempio:
+```
 
-bash
-Copia codice
+**Esempio:**
+
+```bash
 docker rm mio_container
-8. docker rmi
-Descrizione: Rimuove una o più immagini dal sistema.
+```
 
-Sintassi:
+---
 
-bash
-Copia codice
+## 8. `docker rmi`
+
+**Descrizione:** Rimuove una o più immagini dal sistema.
+
+**Sintassi:**
+
+```bash
 docker rmi [opzioni] NOME_IMMAGINE/ID_IMMAGINE
-Esempio:
+```
 
-bash
-Copia codice
+**Esempio:**
+
+```bash
 docker rmi ubuntu:latest
-9. docker build
-Descrizione: Costruisce un'immagine Docker da un Dockerfile.
+```
 
-Sintassi:
+---
 
-bash
-Copia codice
+## 9. `docker build`
+
+**Descrizione:** Costruisce un'immagine Docker da un Dockerfile.
+
+**Sintassi:**
+
+```bash
 docker build [opzioni] percorso
-Esempio:
+```
 
-bash
-Copia codice
+**Esempio:**
+
+```bash
 docker build -t mio_progetto:1.0 .
-L'opzione -t assegna un tag all'immagine creata.
+```
 
-10. docker exec
-Descrizione: Esegue un comando in un container in esecuzione.
+_L'opzione `-t` assegna un tag all'immagine creata._
 
-Sintassi:
+---
 
-bash
-Copia codice
+## 10. `docker exec`
+
+**Descrizione:** Esegue un comando in un container in esecuzione.
+
+**Sintassi:**
+
+```bash
 docker exec [opzioni] NOME_CONTAINER/ID_CONTAINER comando
-Esempio:
+```
 
-bash
-Copia codice
+**Esempio:**
+
+```bash
 docker exec -it mio_container /bin/bash
-L'opzione -it permette l'accesso interattivo al container.
+```
 
-11. docker logs
-Descrizione: Recupera i log di un container.
+_L'opzione `-it` permette l'accesso interattivo al container._
 
-Sintassi:
+---
 
-bash
-Copia codice
+## 11. `docker logs`
+
+**Descrizione:** Recupera i log di un container.
+
+**Sintassi:**
+
+```bash
 docker logs [opzioni] NOME_CONTAINER/ID_CONTAINER
-Esempio:
+```
 
-bash
-Copia codice
+**Esempio:**
+
+```bash
 docker logs mio_container
-12. docker inspect
-Descrizione: Fornisce informazioni dettagliate su container o immagini.
+```
 
-Sintassi:
+---
 
-bash
-Copia codice
+## 12. `docker inspect`
+
+**Descrizione:** Fornisce informazioni dettagliate su container o immagini.
+
+**Sintassi:**
+
+```bash
 docker inspect NOME_CONTAINER/ID_CONTAINER
-Esempio:
+```
 
-bash
-Copia codice
+**Esempio:**
+
+```bash
 docker inspect mio_container
-13. docker push
-Descrizione: Carica un'immagine in un repository Docker.
+```
 
-Sintassi:
+---
 
-bash
-Copia codice
+## 13. `docker push`
+
+**Descrizione:** Carica un'immagine in un repository Docker.
+
+**Sintassi:**
+
+```bash
 docker push NOME_IMMAGINE[:tag]
-Esempio:
+```
 
-bash
-Copia codice
+**Esempio:**
+
+```bash
 docker push mio_username/mia_immagine:latest
-14. docker tag
-Descrizione: Assegna un nuovo tag a un'immagine Docker.
+```
 
-Sintassi:
+---
 
-bash
-Copia codice
+## 14. `docker tag`
+
+**Descrizione:** Assegna un nuovo tag a un'immagine Docker.
+
+**Sintassi:**
+
+```bash
 docker tag ID_IMMAGINE NOME_IMMAGINE[:tag]
-Esempio:
+```
 
-bash
-Copia codice
+**Esempio:**
+
+```bash
 docker tag 123456789abc mio_username/mia_immagine:latest
-15. docker network
-Descrizione: Gestisce le reti Docker.
+```
 
-Sintassi:
+---
 
-bash
-Copia codice
+## 15. `docker network`
+
+**Descrizione:** Gestisce le reti Docker.
+
+**Sintassi:**
+
+```bash
 docker network [comando] [opzioni]
-Esempio per creare una rete:
+```
 
-bash
-Copia codice
+**Esempio per creare una rete:**
+
+```bash
 docker network create mia_rete
-16. docker volume
-Descrizione: Gestisce i volumi Docker.
+```
 
-Sintassi:
+---
 
-bash
-Copia codice
+## 16. `docker volume`
+
+**Descrizione:** Gestisce i volumi Docker.
+
+**Sintassi:**
+
+```bash
 docker volume [comando] [opzioni]
-Esempio per creare un volume:
+```
 
-bash
-Copia codice
+**Esempio per creare un volume:**
+
+```bash
 docker volume create mio_volume
-17. docker-compose
-Descrizione: Strumento per definire ed eseguire applicazioni multi-container con Docker.
+```
 
-Esempio per avviare i servizi definiti in un file docker-compose.yml:
+---
 
-bash
-Copia codice
+## 17. `docker-compose`
+
+**Descrizione:** Strumento per definire ed eseguire applicazioni multi-container con Docker.
+
+**Esempio per avviare i servizi definiti in un file `docker-compose.yml`:**
+
+```bash
 docker-compose up
-Conclusione
-Questi comandi fondamentali ti aiuteranno a iniziare con Docker e a gestire efficacemente i tuoi container e le tue immagini. Per approfondire ulteriormente, consulta la documentazione ufficiale di Docker.
+```
+
+---
