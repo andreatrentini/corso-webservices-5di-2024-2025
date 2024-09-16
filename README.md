@@ -320,6 +320,8 @@ docker volume create mio_volume
 **Esempio per avviare i servizi definiti in un file `docker-compose.yml`:**
 
 ```bash
+docker-compose up
+```
 
 ## Descrizione di Container e Immagini in Docker
 
