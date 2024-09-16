@@ -320,6 +320,64 @@ docker volume create mio_volume
 **Esempio per avviare i servizi definiti in un file `docker-compose.yml`:**
 
 ```bash
+
+## Descrizione di Container e Immagini in Docker
+
+### Immagini Docker
+
+Un'**immagine Docker** è un modello immutabile (read-only) che contiene tutto il necessario per eseguire un'applicazione, compreso il codice, le librerie, le dipendenze, i file di configurazione e le variabili d'ambiente. Le immagini sono costruite a strati utilizzando un Dockerfile, che è uno script contenente una serie di istruzioni su come assemblare l'immagine.
+
+- **Stratificazione:** Ogni istruzione nel Dockerfile crea un nuovo strato nell'immagine. Questo approccio consente di riutilizzare gli strati comuni tra diverse immagini, ottimizzando lo spazio su disco e accelerando i tempi di build.
+- **Portabilità:** Le immagini possono essere condivise attraverso registri pubblici o privati, come Docker Hub, permettendo una distribuzione semplice e consistente delle applicazioni.
+
+### Container Docker
+
+Un **container Docker** è un'istanza eseguibile di un'immagine Docker. I container sono ambienti isolati che eseguono un'applicazione e le sue dipendenze, utilizzando le risorse del sistema operativo host ma mantenendo un isolamento rispetto ad altri container e processi.
+
+- **Isolamento:** I container utilizzano funzionalità del kernel come namespace e cgroups per isolare i processi, garantendo che le applicazioni non interferiscano tra loro.
+- **Leggerezza:** A differenza delle macchine virtuali, i container condividono il kernel del sistema operativo host, rendendoli molto più leggeri e veloci da avviare.
+- **Efficienza:** Permettono di eseguire più istanze di un'applicazione sullo stesso host senza la necessità di overhead aggiuntivo.
+
+### Relazione tra Immagini e Container
+
+- **Creazione di Container:** Un container viene creato a partire da un'immagine. Quando esegui `docker run`, Docker prende l'immagine specificata e la utilizza per creare e avviare un nuovo container.
+- **Immutabilità vs. Mutabilità:** Le immagini sono immutabili; non cambiano una volta create. I container, invece, possono avere uno stato mutabile, ad esempio dati generati o modifiche durante l'esecuzione.
+- **Persistenza dei Dati:** Se desideri che i dati generati all'interno di un container persistano oltre il ciclo di vita del container stesso, è comune utilizzare volumi o bind mounts.
+
+### Esempio Pratico
+
+1. **Costruzione di un'Immagine:**
+
+   Supponiamo di avere un'applicazione Node.js. Crei un Dockerfile che specifica l'ambiente Node necessario e come installare le dipendenze dell'applicazione.
+
+   ```dockerfile
+   FROM node:14
+   WORKDIR /app
+   COPY package.json ./
+   RUN npm install
+   COPY . .
+   CMD ["node", "app.js"]
+   ```
+
+   Costruisci l'immagine con:
+
+   ```bash
+   docker build -t mia_applicazione .
+   ```
+
+2. **Esecuzione di un Container:**
+
+   Una volta costruita l'immagine, puoi creare ed eseguire un container basato su di essa:
+
+   ```bash
+   docker run -d -p 3000:3000 mia_applicazione
+   ```
+
+   Questo comando avvia un container che esegue la tua applicazione Node.js, mappando la porta 3000 del container alla porta 3000 dell'host.
+
+### Conclusione
+
+In sintesi, le **immagini Docker** sono i modelli da cui vengono creati i container, contenenti tutto il necessario per eseguire un'applicazione. I **container Docker** sono le istanze eseguibili di queste immagini, che possono essere avviate, fermate, spostate e cancellate. Questa separazione tra immagine e container offre grande flessibilità e efficienza nella gestione e distribuzione delle applicazioni.
 docker-compose up
 ```
 
