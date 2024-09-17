@@ -12,12 +12,7 @@ Alcune caratteristiche chiave di Docker includono:
 
 Docker è ampiamente utilizzato per lo sviluppo di applicazioni, il testing, e la produzione, offrendo un modo consistente e affidabile per eseguire il software.
 
-## Guida ai Comandi Principali di Docker
-
----
-
 # Guida ai Comandi Principali di Docker
-
 
 ## 1. `docker run`
 
@@ -381,6 +376,5 @@ Un **container Docker** è un'istanza eseguibile di un'immagine Docker. I contai
 
 In sintesi, le **immagini Docker** sono i modelli da cui vengono creati i container, contenenti tutto il necessario per eseguire un'applicazione. I **container Docker** sono le istanze eseguibili di queste immagini, che possono essere avviate, fermate, spostate e cancellate. Questa separazione tra immagine e container offre grande flessibilità e efficienza nella gestione e distribuzione delle applicazioni.
 docker-compose up
-```
 
 ---
