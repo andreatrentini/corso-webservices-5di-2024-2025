@@ -12,12 +12,7 @@ Alcune caratteristiche chiave di Docker includono:
 
 Docker è ampiamente utilizzato per lo sviluppo di applicazioni, il testing, e la produzione, offrendo un modo consistente e affidabile per eseguire il software.
 
-## Guida ai Comandi Principali di Docker
-
----
-
 # Guida ai Comandi Principali di Docker
-
 
 ## 1. `docker run`
 
