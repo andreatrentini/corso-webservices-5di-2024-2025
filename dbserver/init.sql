@@ -1,9 +1,12 @@
+# Cancellazione di un database
+DROP DATABASE dbapp IF EXISTS;
+
 # Creo un nuovo database
 CREATE DATABASE dbapp;
 
-CREATE DATABASE db1;
+# CREATE DATABASE db1;
 
-CREATE DATABASE db2;
+# CREATE DATABASE db2;
 
 # Seleziono il database nel quale creare le tabelle
 USE dbapp;
