@@ -1,0 +1,10 @@
+GET http://localhost:4444
+
+###
+
+POST http://localhost:4444/init
+Content-Type: application/json
+
+{
+    "secret": "12345"
+}
