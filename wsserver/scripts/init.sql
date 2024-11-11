@@ -1,5 +1,5 @@
 # Cancellazione di un database
-DROP DATABASE dbapp IF EXISTS;
+DROP DATABASE IF EXISTS dbapp;
 
 # Creo un nuovo database
 CREATE DATABASE dbapp;
