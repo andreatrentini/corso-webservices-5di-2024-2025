@@ -9,3 +9,13 @@ Content-Type: application/json
     "secret": "12345",
     "adminpassword": "cisco"
 }
+
+###
+
+GET http://localhost:4444/users
+
+###
+GET http://localhost:4444/users/1
+
+###
+DELETE http://localhost:4444/users/1

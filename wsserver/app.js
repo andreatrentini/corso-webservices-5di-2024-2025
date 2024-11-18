@@ -14,6 +14,9 @@ const fs = require('fs');
 // speficicare il percorso per raggiungere il file
 const config = require('./config');
 
+// Elenco dei require per i router che gestiscono le diverse risorse del mio webservice
+const rUsers = require('./users');
+
 // Creo l'applicazione express
 const app = express();
 
@@ -81,6 +84,8 @@ app.post('/init', async (request, response) => {
 })
 
 // ... implemento metodi CRUD
+
+app.use('/users', rUsers);
 
 // Metto in ascolto la mia applicazione express sulla porta scelta per il webservice: 4444
 
