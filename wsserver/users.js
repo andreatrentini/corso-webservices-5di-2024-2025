@@ -17,12 +17,12 @@ router.get('', async (request, response) => {
         // Scrivendo [dati] fra parentesi quadre, stabiliamo che ci interessa solo il primo valore dell'array
         // che ci arriva come risposta (i dati) e non la descrizione dei campi della tabella.
         const [dati] = await pool.execute(SQLstring);
-        response.status(200).send(dati);
+        return response.status(200).send(dati);
     }
     catch (error) {
         // Con il metodo json(...) inviamo al server un oggetto javascript composto da messaggio ed errore ricevuto 
         // da MYSQL formattato in JSON
-        response.status(500).json({
+        return response.status(500).json({
             messaggio: 'Errore interno del server MYSQL.',
             errore: error
         });

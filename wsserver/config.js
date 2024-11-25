@@ -6,8 +6,10 @@ const config = {
         user: 'root',
         password: 'cisco',
         multipleStatements: true,
-        port: 3306
+        port: 3306,
     },
+    secretKey: 'pippoplutoepaperino',
+    durataTokenBearer: 3600,
     saltOrRounds: 10
 }
 
