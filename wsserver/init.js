@@ -20,7 +20,6 @@ router.post('', async (request, response) => {
     let secret = request.body.secret;
     let adminPassword = request.body.adminpassword
 
-    console.log(secret);
     let connessione;
 
     if (secret === config.initSecret) {
