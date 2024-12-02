@@ -10,6 +10,8 @@ const cors = require('cors');
 // speficicare il percorso per raggiungere il file
 const config = require('./config');
 
+const parseJSON = require('./json-check');
+
 // Elenco dei require per i router che gestiscono le diverse risorse del mio webservice
 const rUsers = require('./users');
 const rInit = require('./init');
@@ -25,6 +27,9 @@ app.use(express.urlencoded({extended: false}));
 // Aggiungo la libreria CORS: Aggiunge nell'intestazione della response
 // Una riga che consente ad applicazioni ospitate su altri domini di accedere al webservice
 app.use(cors());
+
+// Controllo che i dati ricevuti dal server siano scritti in formato JSON corretto
+app.use(parseJSON);
 
 // Pubblico il sito web di help contenuto nella cartella chiamata public
 app.use('', express.static('public'));

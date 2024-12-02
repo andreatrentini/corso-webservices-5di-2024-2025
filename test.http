@@ -22,6 +22,7 @@ Content-Type: application/json
 ###
 
 GET http://localhost:4444/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicnVvbG8iOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNzMzMTUxNDYxLCJleHAiOjE3MzMxNTUwNjF9.v6cQFHu4291VwK0ToBP8AiA0YdXBbAHv09DyngCBdAs
 
 ###
 GET http://localhost:4444/users/1

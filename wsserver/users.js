@@ -4,10 +4,14 @@ const mysql = require('mysql2/promise');
 const bcrypt = require('bcrypt');
 const config = require('./config'); 
 const pool = require('./db');
+const { administratorAuth } = require('./auth');
 
 // Questo router gestirà tutte le richieste dai client che hanno come url
 // l'indirizzo di base: http://localhost:4444/users
 const router = express.Router();
+
+// 
+router.use(administratorAuth);
 
 router.get('', async (request, response) => {
     try {
