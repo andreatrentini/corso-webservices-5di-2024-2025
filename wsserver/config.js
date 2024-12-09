@@ -10,7 +10,10 @@ const config = {
     },
     secretKey: 'pippoplutoepaperino',
     durataTokenBearer: 3600,
-    saltOrRounds: 10
+    saltOrRounds: 10,
+    tabelle: {
+        users: ['id', 'nome', 'cognome', 'indirizzo', 'cap', 'citta', 'provincia', 'telefono', 'cell', 'mail', 'username', 'password', 'ruolo']
+    }
 }
 
 // Esport la costante config in modo che possa essere utilizzata in altri file javascript

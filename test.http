@@ -22,8 +22,20 @@ Content-Type: application/json
 ###
 
 GET http://localhost:4444/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicnVvbG8iOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNzMzMTUxNDYxLCJleHAiOjE3MzMxNTUwNjF9.v6cQFHu4291VwK0ToBP8AiA0YdXBbAHv09DyngCBdAs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicnVvbG8iOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNzMzMTUzMDY5LCJleHAiOjE3MzMxNTY2Njl9.a6ajWGBbPPsZla0ro3yo8Ts2AoJueVNnFS_Ebs-vVA4
 
+###
+POST http://localhost:4444/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicnVvbG8iOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNzMzNzU0NTI5LCJleHAiOjE3MzM3NTgxMjl9.NgAXgr79RdUgRb-vZzSUG6azFES9iin9Zj3ZfNxW9pk
+Content-Type: application/json
+
+{
+    "username": "user",
+    "password": "password",
+    "ruolo": "user",
+    "nome": "Andrea",
+    "indirizzo": "Via..."
+}
 ###
 GET http://localhost:4444/users/1
 
