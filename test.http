@@ -22,19 +22,33 @@ Content-Type: application/json
 ###
 
 GET http://localhost:4444/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicnVvbG8iOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNzMzMTUzMDY5LCJleHAiOjE3MzMxNTY2Njl9.a6ajWGBbPPsZla0ro3yo8Ts2AoJueVNnFS_Ebs-vVA4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicnVvbG8iOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNzM0MzU4OTQzLCJleHAiOjE3MzQzNjI1NDN9.G4fTzsG79Sqwu5t18HMTad9V14mle2U9Vqn4zmjWBrI
+
+###
+GET http://localhost:4444/users/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicnVvbG8iOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNzM0MzU4OTQzLCJleHAiOjE3MzQzNjI1NDN9.G4fTzsG79Sqwu5t18HMTad9V14mle2U9Vqn4zmjWBrI
 
 ###
 POST http://localhost:4444/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicnVvbG8iOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNzMzNzU0NTI5LCJleHAiOjE3MzM3NTgxMjl9.NgAXgr79RdUgRb-vZzSUG6azFES9iin9Zj3ZfNxW9pk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicnVvbG8iOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNzM0MzU4OTQzLCJleHAiOjE3MzQzNjI1NDN9.G4fTzsG79Sqwu5t18HMTad9V14mle2U9Vqn4zmjWBrI
 Content-Type: application/json
 
 {
-    "username": "user",
+    "username": "user2",
     "password": "password",
     "ruolo": "user",
     "nome": "Andrea",
-    "indirizzo": "Via..."
+    "indirizzo": "Via...",
+    "sdfsjhgfsj": "skjd fksdfjdks fj"
+}
+###
+PUT http://localhost:4444/users/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicnVvbG8iOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNzM0MzU4OTQzLCJleHAiOjE3MzQzNjI1NDN9.G4fTzsG79Sqwu5t18HMTad9V14mle2U9Vqn4zmjWBrI
+Content-Type: application/json
+
+{
+    "nome": "Valentina",    
+    "cell": "365263472"
 }
 ###
 GET http://localhost:4444/users/1

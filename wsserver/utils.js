@@ -41,8 +41,12 @@ function setInsertFields(dati) {
 }
 
 function setInsertPlaceholders(dati) {
-    
+    return '(' + getColumns(dati).map(() => '?').join(', ') +')'
+}
+
+function setUpdateFields(dati) {
+    return getColumns(dati).map(field => field + '=?').join(', ');
 }
 
 
-module.exports = { correctRequestData }
+module.exports = { correctRequestData, getColumns, getValues, setInsertFields, setInsertPlaceholders, setUpdateFields }
