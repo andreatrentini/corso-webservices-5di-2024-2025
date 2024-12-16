@@ -12,6 +12,11 @@ function correctRequestData(body, table) {
     }, {});
     console.log(oggettoCorretto);
     return; */
+    // Il metodo keys estrae il nome delle proprietà di un oggetto e le memorizza in un array che viene restituito
+    // l'array viene poi filtrato tenendo solo i nomi delle proprietà che sono presenti in config.tabelle.nometabella
+    // NB: in javascript si può utilizzare la sintassi prevista per gli array oggetto[nomeproprietà]
+    // I'array delle proprietà filtrate viene poi usato con la funzione reduce, che restituisce un nuovo oggetto che presenta le coppie chiave-valore
+    // dei soli campi presenti in config.tabelle[nometabella]
     return Object.keys(body)
             .filter(field => config.tabelle[table].includes(field))
             .reduce((newObject, field) => {
@@ -21,10 +26,12 @@ function correctRequestData(body, table) {
 }
 
 function getColumns(dati) {
+    // Ottengo un array con i nomi delle proprietà dell'oggetto passato come parametro (dati)
     return Object.keys(dati);
 }
 
 function getValues(dati) {
+    // Ottengo un array con i valori delle proprietà dell'oggetto passato come parametro (dati)
     return Object.values(dati);
 }
 
