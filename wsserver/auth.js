@@ -17,7 +17,7 @@ function administratorAuth(request, response, next) {
         })
     }
 
-    jwt.verify(token, config.secretKey, async (err, user) => {
+    jwt.verify(token, config.secretKey, async (err, datiToken) => {
         if (err) {
             // Il token non era valido
             return response.status(401).json({
@@ -26,9 +26,15 @@ function administratorAuth(request, response, next) {
         }
         // Il token è valido
 
+        if (datiToken.tipo != 'dati') {
+            return response.status(401).json({
+                messaggio: 'Token non valido.'
+            })
+        }
+
         const stringSQL = "SELECT id FROM users WHERE username = ? AND ruolo = 'administrator';";
 
-        const [dati] = await pool.execute(stringSQL, [user.username]);
+        const [dati] = await pool.execute(stringSQL, [dati.username]);
 
         if(dati.length == 0) {
             return response.status(401).json({
