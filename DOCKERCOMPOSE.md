@@ -1,8 +1,10 @@
+[<u>Back</u>](./README.md)
+
 # Docker compose
 
 Docker Compose è uno strumento che permette di definire e gestire applicazioni multi-container con Docker. Utilizzando un file YAML, Docker Compose consente di configurare i servizi, le reti e i volumi necessari per un'applicazione, semplificando il processo di deployment e testing in ambienti locali e di produzione. Ecco una guida dettagliata su come utilizzare Docker Compose.
 
-### Installazione di Docker Compose
+## Installazione di Docker Compose
 
 Prima di tutto, è necessario installare Docker Compose. Docker Compose è incluso in Docker Desktop per Windows e Mac, ma su Linux, deve essere installato separatamente. Ecco come si può fare:
 
@@ -28,7 +30,7 @@ Prima di tutto, è necessario installare Docker Compose. Docker Compose è inclu
 
 Creare un file `docker-compose.yml` ricco di funzionalità e ottimizzato richiede una comprensione approfondita di tutti gli oggetti e le opzioni disponibili. Qui troverai una guida dettagliata su ogni aspetto che puoi configurare in un file `docker-compose.yml`, partendo dalla versione `3.8`, una delle più usate e stabili per la produzione.
 
-### Sintassi
+## Sintassi
 
 ### 1. Indentazione
 
@@ -248,3 +250,5 @@ Dopo aver configurato il file `docker-compose.yml`, puoi gestire l'applicazione 
 ### Conclusioni
 
 Docker Compose è un potente strumento che semplifica notevolmente la gestione di applicazioni Dockerizzate, rendendo più facile che mai configurare, testare e distribuire applicazioni complesse. Con una solida comprensione di come funzionano i file `docker-compose.yml` e l'abilità di manipolare servizi attraverso comandi Compose, puoi migliorare significativamente i flussi di lavoro di sviluppo e deployment.
+
+[<u>Back</u>](./README.md)

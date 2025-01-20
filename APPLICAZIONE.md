@@ -1,4 +1,6 @@
-## l'Applicazione webservice
+[<u>Back</u>](./README.md)
+
+# l'Applicazione webservice
 
 L'applicazione **Node.js Express** implementa un servizio web **RESTful CRUD (Create, Read, Update, Delete)** per gestire gli utenti e fornisce funzionalità di autenticazione e autorizzazione.
 
@@ -43,7 +45,7 @@ L'applicazione utilizza diverse librerie di terze parti, tra cui:
 
 **Conclusione**
 
-### 1. app.js
+## 1. app.js
 
 Questo è il file principale dell'applicazione Express. Si occupa di configurare il server, inclusi i middleware necessari e le rotte.
 
@@ -77,7 +79,7 @@ const server = app.listen(config.port, () => {
 - **parseJSON**: Un middleware personalizzato per assicurarsi che il body delle richieste sia in formato JSON valido.
 - **Rotte**: Configura rotte specifiche per differenti funzionalità dell'app (inizializzazione, autenticazione, gestione utenti, ecc.).
 
-### 2. auth.js
+## 2. auth.js
 
 Questo file implementa funzioni di middleware per autenticare gli utenti usando token JWT.
 
@@ -129,7 +131,7 @@ module.exports = { administratorAuth, userAuth };
 - **jwt.verify()**: Verifica il token per autenticare gli utenti.
 - **pool.execute()**: Esegue query al database per verificare i privilegi dell'utente.
 
-### 3. config.js
+## 3. config.js
 
 Contiene le configurazioni per l'applicazione.
 
@@ -159,7 +161,7 @@ module.exports = config;
 - **secretKey**: Chiave segreta usata per firmare i token JWT.
 - **initDB**: Configurazioni per la connessione al database.
 
-### 4. db.js
+## 4. db.js
 
 Configura un pool di connessioni al database MySQL.
 
@@ -180,7 +182,7 @@ module.exports = pool;
 ```
 - **createPool()**: Crea un pool di connessioni che migliora le performance gestendo multiple connessioni aperte al database.
 
-### 5. init.js
+## 5. init.js
 
 Gestisce l'inizializzazione del database e la configurazione iniziale.
 
@@ -219,7 +221,7 @@ module.exports = router;
 - **bcrypt.hashSync()**: Cripta la password dell'utente amministratore.
 - **fs.readFileSync()**: Legge e esegue uno script SQL dal file system per inizializzare il database.
 
-### 6. json-check.js
+## 6. json-check.js
 
 Middleware per verificare che i dati JSON ricevuti nelle richieste siano formattati correttamente.
 
@@ -235,7 +237,7 @@ module.exports = parseJSON;
 ```
 - **SyntaxError**: Controlla se l'errore generato è a causa di un JSON malformato e, in tal caso, invia una risposta con errore 400.
 
-### 7. login.js
+## 7. login.js
 
 Gestisce il processo di login, verificando le credenziali e rilasciando token di accesso e refresh.
 
@@ -286,7 +288,7 @@ module.exports = router;
 - **bcrypt.compareSync()**: Verifica che la password inserita dall'utente corrisponda a quella criptata nel database.
 - **jwt.sign()**: Genera un token JWT per l'utente autenticato.
 
-### 8. promise.js
+## 8. promise.js
 
 Fornisce esempi di come gestire le operazioni asincrone con le promesse in JavaScript.
 
@@ -332,7 +334,7 @@ console.log('Fine operazioni sincrone.');
 - **new Promise()**: Crea una nuova promessa che risolve o rifiuta basandosi su una condizione casuale.
 - **getData()**: Funzione che simula il recupero dei dati in modo asincrono.
 
-### 9. refresh.js
+## 9. refresh.js
 
 Gestisce il rinnovo dei token di accesso usando un token di refresh.
 
@@ -380,7 +382,7 @@ module.exports = router;
 - **router.get()**: Definisce un endpoint GET che gestisce il rinnovo del token.
 - **jwt.verify()**: Verifica il token di refresh per assicurare che sia valido prima di rilasciare un nuovo token di accesso.
 
-### 10. users.js
+## 10. users.js
 
 Gestisce tutte le operazioni CRUD sulla tabella degli utenti, permettendo la creazione, lettura, aggiornamento e cancellazione degli utenti.
 
@@ -490,10 +492,10 @@ module.exports = router;
 - **bcrypt**: Utilizzato per criptare le password prima di memorizzarle nel database.
 - **body() e validationResult()**: Utilizzati per validare i dati in ingresso nelle richieste.
 
-### 10. utils.js
+## 10. utils.js
 Il file `utils.txt` contiene una serie di funzioni di utilità che supportano le operazioni CRUD per il tuo backend Node.js usando Express. Queste funzioni aiutano a manipolare i dati delle richieste, costruire query SQL dinamicamente e gestire le operazioni con il database in modo più efficiente. Ecco una guida dettagliata sulle funzioni presenti nel file:
 
-#### 1. **correctRequestData(body, table)**
+### 1. **correctRequestData(body, table)**
 Questa funzione prende due parametri: `body`, che rappresenta il corpo della richiesta, e `table`, il nome della tabella per la quale i dati devono essere verificati. Utilizza la configurazione definita in `config.tabelle` per filtrare e restituire solo i campi validi per la tabella specificata.
 
 - **Processo:**
@@ -501,28 +503,28 @@ Questa funzione prende due parametri: `body`, che rappresenta il corpo della ric
   - Filtra queste chiavi per mantenere solo quelle definite nella configurazione della tabella corrispondente in `config.tabelle`.
   - Costruisce un nuovo oggetto contenente solo i campi validi.
 
-#### 2. **getColumns(dati)**
+### 2. **getColumns(dati)**
 Questa funzione accetta un oggetto e restituisce un array contenente i nomi delle sue proprietà. È utile per generare dinamicamente le parti delle query SQL che richiedono l'elenco delle colonne.
 
-#### 3. **getValues(dati)**
+### 3. **getValues(dati)**
 Simile a `getColumns`, questa funzione prende un oggetto e restituisce un array dei suoi valori. È usata per costruire l'array di valori da passare alle query SQL preparate.
 
-#### 4. **setInsertFields(dati)**
+### 4. **setInsertFields(dati)**
 Genera una stringa contenente le colonne per una query SQL `INSERT`, basata sui campi presenti nell'oggetto `dati`. Questo è utilizzato per costruire la parte della query che specifica in quali colonne inserire i dati.
 
 - **Formato Output:** `(nome, cognome, ...)`
 
-#### 5. **setInsertPlaceholders(dati)**
+### 5. **setInsertPlaceholders(dati)**
 Crea una stringa di segnaposto SQL (`?`) per una query `INSERT`, basata sul numero di campi presenti nell'oggetto `dati`. Questo aiuta a costruire la parte della query che accetta i valori effettivi da inserire.
 
 - **Formato Output:** `(?, ?, ...)`
 
-#### 6. **setUpdateFields(dati)**
+### 6. **setUpdateFields(dati)**
 Genera una stringa per una query SQL `UPDATE`, combinando i nomi dei campi con i segnaposto per i valori. È utile per costruire query di aggiornamento dinamiche basate sugli oggetti dati.
 
 - **Formato Output:** `nome=?, cognome=?, ...`
 
-#### Utilizzo delle Funzioni
+### Utilizzo delle Funzioni
 Queste funzioni sono essenziali per costruire query SQL in modo sicuro e dinamico, evitando hard-coding e facilitando la manutenzione e l'aggiornamento del codice. Ad esempio, quando ricevi una richiesta per aggiornare un record utente, puoi usare queste funzioni per validare e preparare i dati prima di eseguire la query:
 
 ```javascript
@@ -545,3 +547,5 @@ router.post('/update-user', async (req, res) => {
 
 module.exports = router;
 ```
+
+[<u>Back</u>](./README.md)

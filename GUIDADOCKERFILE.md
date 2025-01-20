@@ -1,3 +1,5 @@
+[<u>Back</u>](./README.md)
+
 # DOCKERFILE
 
 Un Dockerfile è un file di testo che contiene una sequenza di istruzioni necessarie per costruire un'immagine Docker, che poi può essere usata per eseguire container Docker. Questo file è fondamentale nell'ecosistema Docker poiché automatisa il processo di creazione dell'immagine, rendendolo ripetibile e coerente, elementi essenziali soprattutto in ambienti di produzione e sviluppo collaborativo.
@@ -111,3 +113,5 @@ USER nobody
 ### Conclusioni
 
 In conclusione, il Dockerfile è uno strumento potente e versatile per la gestione di applicazioni in container. Offre un metodo standardizzato e automatizzato per la creazione di immagini Docker, essenziale per lo sviluppo moderno di applicazioni e per l'operatività di sistemi scalabili e distribuiti. Utilizzare un Dockerfile è ormai considerato una best practice nell'ambito dello sviluppo software basato su container.
+
+[<u>Back</u>](./README.md)

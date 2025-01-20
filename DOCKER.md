@@ -1,6 +1,6 @@
-# Corso webservices 5Di 2024/2025
+[<u>Back</u>](./README.md)
 
-## Docker
+# Docker
 Docker è una piattaforma di virtualizzazione a livello di sistema operativo, conosciuta anche come "containerizzazione". Permette agli sviluppatori di impacchettare un'applicazione con tutte le parti necessarie, come librerie e dipendenze, e distribuirla come un unico pacchetto o container. Questo container può essere eseguito su qualsiasi sistema che ha Docker installato, indipendentemente dall'ambiente sottostante, il che aiuta ad eliminare il problema del "funziona sul mio computer".
 
 Alcune caratteristiche chiave di Docker includono:
@@ -12,9 +12,9 @@ Alcune caratteristiche chiave di Docker includono:
 
 Docker è ampiamente utilizzato per lo sviluppo di applicazioni, il testing, e la produzione, offrendo un modo consistente e affidabile per eseguire il software.
 
-# Guida ai Comandi Principali di Docker
+## Guida ai Comandi Principali di Docker
 
-## 1. `docker run`
+### 1. `docker run`
 
 **Descrizione:** Esegue un comando in un nuovo container.
 
@@ -32,7 +32,7 @@ docker run hello-world
 
 ---
 
-## 2. `docker pull`
+### 2. `docker pull`
 
 **Descrizione:** Scarica un'immagine da un repository Docker.
 
@@ -50,7 +50,7 @@ docker pull ubuntu:latest
 
 ---
 
-## 3. `docker images`
+### 3. `docker images`
 
 **Descrizione:** Elenca le immagini Docker presenti sul sistema.
 
@@ -68,7 +68,7 @@ docker images
 
 ---
 
-## 4. `docker ps`
+### 4. `docker ps`
 
 **Descrizione:** Elenca i container in esecuzione.
 
@@ -88,7 +88,7 @@ _L'opzione `-a` mostra tutti i container, inclusi quelli non in esecuzione._
 
 ---
 
-## 5. `docker stop`
+### 5. `docker stop`
 
 **Descrizione:** Ferma uno o più container in esecuzione.
 
@@ -106,7 +106,7 @@ docker stop mio_container
 
 ---
 
-## 6. `docker start`
+### 6. `docker start`
 
 **Descrizione:** Avvia uno o più container fermati.
 
@@ -124,7 +124,7 @@ docker start mio_container
 
 ---
 
-## 7. `docker rm`
+### 7. `docker rm`
 
 **Descrizione:** Rimuove uno o più container.
 
@@ -142,7 +142,7 @@ docker rm mio_container
 
 ---
 
-## 8. `docker rmi`
+### 8. `docker rmi`
 
 **Descrizione:** Rimuove una o più immagini dal sistema.
 
@@ -160,7 +160,7 @@ docker rmi ubuntu:latest
 
 ---
 
-## 9. `docker build`
+### 9. `docker build`
 
 **Descrizione:** Costruisce un'immagine Docker da un Dockerfile.
 
@@ -180,7 +180,7 @@ _L'opzione `-t` assegna un tag all'immagine creata._
 
 ---
 
-## 10. `docker exec`
+### 10. `docker exec`
 
 **Descrizione:** Esegue un comando in un container in esecuzione.
 
@@ -200,7 +200,7 @@ _L'opzione `-it` permette l'accesso interattivo al container._
 
 ---
 
-## 11. `docker logs`
+### 11. `docker logs`
 
 **Descrizione:** Recupera i log di un container.
 
@@ -218,7 +218,7 @@ docker logs mio_container
 
 ---
 
-## 12. `docker inspect`
+### 12. `docker inspect`
 
 **Descrizione:** Fornisce informazioni dettagliate su container o immagini.
 
@@ -236,7 +236,7 @@ docker inspect mio_container
 
 ---
 
-## 13. `docker push`
+### 13. `docker push`
 
 **Descrizione:** Carica un'immagine in un repository Docker.
 
@@ -254,7 +254,7 @@ docker push mio_username/mia_immagine:latest
 
 ---
 
-## 14. `docker tag`
+### 14. `docker tag`
 
 **Descrizione:** Assegna un nuovo tag a un'immagine Docker.
 
@@ -272,7 +272,7 @@ docker tag 123456789abc mio_username/mia_immagine:latest
 
 ---
 
-## 15. `docker network`
+### 15. `docker network`
 
 **Descrizione:** Gestisce le reti Docker.
 
@@ -290,7 +290,7 @@ docker network create mia_rete
 
 ---
 
-## 16. `docker volume`
+### 16. `docker volume`
 
 **Descrizione:** Gestisce i volumi Docker.
 
@@ -308,7 +308,7 @@ docker volume create mio_volume
 
 ---
 
-## 17. `docker-compose`
+### 17. `docker-compose`
 
 **Descrizione:** Strumento per definire ed eseguire applicazioni multi-container con Docker.
 
@@ -627,3 +627,5 @@ Il binding di un volume è diretto e mappa esattamente una directory dell'host d
 Monitorare lo spazio su disco usato dai volumi e la loro performance è essenziale, specialmente in ambienti di produzione. Docker non pulisce automaticamente i volumi non utilizzati, quindi potrebbe essere necessario gestirli manualmente per evitare di esaurire lo spazio su disco.
 
 Con queste basi, dovresti essere in grado di utilizzare efficacemente il volume binding in Docker per sviluppare, testare e gestire le applicazioni in modo più efficace e flessibile.
+
+[<u>Back</u>](./README.md)
