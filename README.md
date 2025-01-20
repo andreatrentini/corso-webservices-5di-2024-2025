@@ -9,3 +9,5 @@
 - [Webservices Restful CRUD](./WEBSERVICES.md)
 - [Creazione dei container per MYSQL e per l'applicazione nodesj (webservice)](./CONTAINER.md)
 - [Il webservice](./APPLICAZIONE.md)
+- [DOCKERFILE](./GUIDADOCKERFILE.md)
+- [Docker compose](./DOCKERCOMPOSE.md)
