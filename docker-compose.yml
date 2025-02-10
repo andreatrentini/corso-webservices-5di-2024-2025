@@ -1,0 +1,50 @@
+volumes:
+  db-storage:
+    driver: local
+
+networks:
+  db-ws-net:
+    driver: bridge
+
+secrets:
+  root_db_password:
+    file: .dbpassword
+  init_key:
+    file: .initkey
+  secret_key:
+    file: .secretkey
+
+services:
+  sql-server:
+    image: mysql:latest
+    container_name: sql-server
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/root_db_password
+    networks:
+      - db-ws-net
+    ports:
+      - 3330:3306
+    volumes:
+      - db-storage:/var/lib/mysql
+    secrets:
+      - root_db_password
+    restart: always      
+  ws-server:
+    image: node:latest
+    container_name: ws-server
+    networks:
+      - db-ws-net
+    tty: true
+    volumes:
+      - ./wsserver:/app
+    restart: always
+    depends_on:
+      - sql-server
+    secrets:
+      - root_db_password
+      - init_key
+      - secret_key      
+    working_dir: /app
+    ports:
+      - 4445:4444
+    command: bash -c "npm install && npm install -g nodemon && nodemon app.js"

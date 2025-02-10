@@ -9,8 +9,19 @@ const cors = require('cors');
 // Per i nostri oggetti, funzioni, costanti, ecc. è necessario
 // speficicare il percorso per raggiungere il file
 const config = require('./config');
+const fs = require('fs');
+
+const dbpassword = fs.readFileSync('/run/secrets/root_db_password');
+config.initDB.password = dbpassword;
+const initkey = fs.readFileSync('/run/secrets/init_key');
+const secretkey = fs.readFileSync('/run/secrets/secret_key');
+config.secretKey = secretkey;
+config.initSecret = initkey;
+
 
 const parseJSON = require('./json-check');
+
+// Libreria che ci consente di interagire con il file-system
 
 // Elenco dei require per i router che gestiscono le diverse risorse del mio webservice
 const rUsers = require('./users');

@@ -1,14 +1,14 @@
 const config = {
     port: 4444,
-    initSecret: '12345',
+    initSecret: '',
     initDB: {
         host: 'dbserver',
         user: 'root',
-        password: 'cisco',
+        password: '',
         multipleStatements: true,
         port: 3306,
     },
-    secretKey: 'pippoplutoepaperino',
+    secretKey: '',
     durataTokenBearer: 3600,
     durataTokenRefresh: 84600,
     saltOrRounds: 10,
